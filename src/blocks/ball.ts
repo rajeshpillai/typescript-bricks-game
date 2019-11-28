@@ -60,10 +60,10 @@ export default class Ball extends Entity {
     this.xVelocity = Math.random() > 0.5 ? 5 : -5; // 50% chance of starting from left or right
   }
 
-  update = function () {
+  update() {
     let game = this.game;
     //Entity.prototype.update.apply(this, arguments); // call parent update()
-
+    super.update();
     // If the ball hits the top postion move it down and vice versa
     if (this.y > game.height - this.height || this.y < 0) {
       this.yVelocity *= -1; // switch the direction of the ball
