@@ -1,7 +1,8 @@
 {
   "port": 8000,
   "files": [
-    "./src/**/*.{html,htm,css,js}"
+    "./src/**/*.{html,htm,css,js}",
+    "./dist/**/*.{js}"
   ],
   "server": {
     "baseDir": "./public"

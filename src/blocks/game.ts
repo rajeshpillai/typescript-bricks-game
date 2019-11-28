@@ -1,10 +1,19 @@
+import Entity from './entity';
+
 export default class Game {
-  constructor(scene) {
+  entities: Entity[]
+  ball: any
+  height: any
+  width: any
+  canvas: any
+
+  constructor(canvas) {
+    this.canvas = canvas;
   }
 
   start() {
-    let fps = 60,
-      interval = 1000 / fps;
+    let fps: number = 60,
+      interval: number = 1000 / fps;
 
     let loop = () => {
       window.requestAnimationFrame(loop);
@@ -16,10 +25,14 @@ export default class Game {
   }
 
   update() {
-    console.log('Game: updating...')
+    this.entities.forEach((entity) => {
+      if (entity.update) entity.update();
+    });
   }
 
   draw() {
-    console.log('Game: drawing...')
+    this.entities.forEach((entity) => {
+      if (entity.draw) entity.draw();
+    });
   }
 }
