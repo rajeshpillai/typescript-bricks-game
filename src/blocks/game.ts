@@ -9,6 +9,8 @@ export default class Game {
   wall: any
   player: any
   background: any
+  score1: number
+  score2: number
 
   static keys = {
     32: 'space',
@@ -23,6 +25,8 @@ export default class Game {
     this.canvas = canvas;
     this.width = canvas.offsetWidth;
     this.height = canvas.offsetHeight;
+    this.score1 = 0;
+    this.score2 = 0;
 
     this.keyPressed = {};
 

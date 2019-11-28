@@ -6,6 +6,9 @@ export default class Background extends Entity {
   constructor(game) {
     super(game)
     this.score_player1 = document.getElementById("score_player1");
-    this.score_player2 = document.getElementById("score_player2");
+  }
+
+  draw() {
+    this.score_player1.innerText = this.game.score1;
   }
 }

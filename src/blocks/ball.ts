@@ -92,8 +92,9 @@ export default class Ball extends Entity {
 
     for (var i = 0; i < game.wall.bricks.length; i++) {
       var b = game.wall.bricks[i];
-      if (this.intersect(b)) {
+      if (b.show == true &&  this.intersect(b)) {
         b.show = false;
+        game.score1++;
         console.log("::brick.intersect");
       }
     }
