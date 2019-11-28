@@ -8,6 +8,7 @@ export default class Game {
   canvas: any
   wall: any
   player: any
+  background: any
 
   static keys = {
     32: 'space',
@@ -25,7 +26,7 @@ export default class Game {
 
     this.keyPressed = {};
 
-    document.addEventListener("keydown", (e) =>{
+    document.addEventListener("keydown", (e) => {
       this.handleEvent(e);
     });
     document.addEventListener("keyup", (e) => {

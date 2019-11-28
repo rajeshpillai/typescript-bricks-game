@@ -8,6 +8,10 @@
   <title>TypeScript OO Game</title>
 
   <style type="text/css">
+    #game-wrapper {
+      position: relative;
+    }
+
     #game {
       position: relative;
       width: 640px;
@@ -18,18 +22,19 @@
 
     #score_player1,
     #score_player2 {
+      display: inline-block;
       position: absolute;
     }
 
     #score_player1 {
       left: 150px;
-      top: 50px;
+      top: 150px;
       background-color: greenyellow;
     }
 
     #score_player2 {
-      left: 290px;
-      top: 50px;
+      left: 490px;
+      top: 150px;
       background-color: lightcyan;
     }
 
@@ -54,9 +59,11 @@
 </head>
 
 <body>
-  <div>
+  <div class="game-wrapper">
     <h2>TypeScript Game</h2>
     <div id="game">
+      <span id="score_player1">0</span>
+      <span id="score_player2">0</span>
 
     </div>
   </div>

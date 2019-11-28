@@ -1,6 +1,6 @@
 import { Paddle } from "../paddle";
 
-export class Player extends Paddle {
+export default class Player extends Paddle {
   name: string;
   player: HTMLDivElement;
 

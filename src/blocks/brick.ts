@@ -1,10 +1,10 @@
 import Entity from "./entity"
 
-export class Brick extends Entity {
+export default class Brick extends Entity {
   y: any
   x: any
   width: any
-  height:any
+  height: any
   player: any
   show: boolean
   yVelocity: any
@@ -36,14 +36,14 @@ export class Brick extends Entity {
     game.canvas.append(player);
   }
 
-  draw  () {
+  draw() {
     var player = this.player;
-    player.style.left = this.x +'px';
-    player.style.top = this.y +'px';
+    player.style.left = this.x + 'px';
+    player.style.top = this.y + 'px';
   }
-  
-  hide () {
+
+  hide() {
     var player = this.player;
-    player.style.display="none";
+    player.style.display = "none";
   }
 }

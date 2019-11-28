@@ -1,7 +1,7 @@
 import Entity from "./entity";
-import { Brick } from "./brick";
+import Brick from "./brick";
 
-export class Wall extends Entity {
+export default class Wall extends Entity {
   bricks: any
 
   constructor(game) {
