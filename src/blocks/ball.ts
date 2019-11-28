@@ -14,7 +14,7 @@ export default class Ball extends Entity {
   player: any
 
   constructor(game) {
-    super();
+    super(game);
     this.game = game;
     this.width = 20;
     this.height = 20;

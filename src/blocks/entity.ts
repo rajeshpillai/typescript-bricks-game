@@ -5,6 +5,7 @@ class Entity {
   y: number = 0
   px: number = 0
   py: number = 0
+  game: any
 
   // Dimensions
   width: number = 0
@@ -13,6 +14,10 @@ class Entity {
   // A velocity: speed with direction
   xVelocity: number = 0;
   yVelocity: number = 0;
+
+  constructor(game) {
+
+  }
 
   // On each update, we apply the velocity to the current position.
   // This makes the entity move.

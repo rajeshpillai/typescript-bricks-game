@@ -6,6 +6,7 @@ export default class Game {
   height: any
   width: any
   canvas: any
+  wall: any
 
   constructor(canvas) {
     this.canvas = canvas;
