@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TypeScript OO Game</title>
+
+  <style type="text/css">
+    #game {
+      position: relative;
+      width: 640px;
+      height: 480px;
+      background-color: black;
+    }
+
+
+    #score_player1,
+    #score_player2 {
+      position: absolute;
+    }
+
+    #score_player1 {
+      left: 150px;
+      top: 50px;
+      background-color: greenyellow;
+    }
+
+    #score_player2 {
+      left: 290px;
+      top: 50px;
+      background-color: lightcyan;
+    }
+
+    #player {
+      background-color: greenyellow;
+    }
+
+    #bot {
+      background-color: blue;
+    }
+
+    #ball {
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    .brick {
+      background-color: yellow;
+      border: 3px solid brown;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h2>TypeScript Game</h2>
+    <div id="game">
+
+    </div>
+  </div>
+  <script src="./dist/bundle.js"></script>
+</body>
+
+</html>
