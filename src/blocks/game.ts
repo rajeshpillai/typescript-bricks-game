@@ -7,9 +7,45 @@ export default class Game {
   width: any
   canvas: any
   wall: any
+  player: any
+
+  static keys = {
+    32: 'space',
+    37: 'left',
+    38: 'up',
+    39: 'right',
+    40: 'down'
+  };
+  keyPressed: {};
 
   constructor(canvas) {
     this.canvas = canvas;
+    this.width = canvas.offsetWidth;
+    this.height = canvas.offsetHeight;
+
+    this.keyPressed = {};
+
+    document.addEventListener("keydown", (e) =>{
+      this.handleEvent(e);
+    });
+    document.addEventListener("keyup", (e) => {
+      this.handleEvent(e);
+    });
+  }
+
+  handleEvent(e) {
+    // Convert the key code to key name
+    var keyName = Game.keys[e.which];
+
+    if (keyName) {
+      // e.g: 'self.keyPressed.up = true' on keydown
+      // Will be set to false on keyup
+      this.keyPressed[keyName] = (e.type === "keydown");
+      e.preventDefault();
+
+      console.log("KEY: ", this.keyPressed);
+    }
+
   }
 
   start() {
@@ -37,3 +73,4 @@ export default class Game {
     });
   }
 }
+
