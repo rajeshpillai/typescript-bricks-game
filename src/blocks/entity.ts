@@ -16,7 +16,7 @@ class Entity {
   yVelocity: number = 0;
 
   constructor(game) {
-
+    this.game = game;
   }
 
   // On each update, we apply the velocity to the current position.
