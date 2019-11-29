@@ -11,6 +11,7 @@ export default class Game {
   background: any
   score1: number
   score2: number
+  animId: any
 
   static keys = {
     32: 'space',
@@ -57,13 +58,17 @@ export default class Game {
     let fps: number = 60,
       interval: number = 1000 / fps;
 
-    let loop = () => {
-      window.requestAnimationFrame(loop);
+    let loop = (time) => {
+      this.animId = window.requestAnimationFrame(loop);
       this.update();
       this.draw();
+
+      if (this.score1 == 10) {
+        window.cancelAnimationFrame(this.animId);
+      }
     };
 
-    loop();
+    window.requestAnimationFrame(loop);
   }
 
   update() {
