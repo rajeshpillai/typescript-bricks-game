@@ -5,14 +5,14 @@ import Player from './blocks/player';
 import Background from './blocks/background';
 
 declare global {
-  interface Window { game: any; setup: any }
+  interface Window { game: any; startGame: any }
 }
 
 
 var scene = document.querySelector("#game"),
   game = new Game(scene);
 
-function setup() {
+function start() {
   scene.innerHTML = "";
   window.cancelAnimationFrame(game.animId);
   game.entities = [
@@ -22,11 +22,13 @@ function setup() {
     game.background = new Background(game)
   ]
   game.score1 = 0;
+
+  game.start();
 }
 
-setup();
-game.start();
+start();
+//game.start();
 
 window.game = game;
-window.setup = setup;
+window.startGame = start;
 
