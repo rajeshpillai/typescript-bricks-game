@@ -57,24 +57,21 @@ export default class Ball extends Entity {
       max = 5;
 
     this.yVelocity = Math.floor(Math.random() * (max - min + 1) + min);
-    this.xVelocity = Math.random() > 0.5 ? 5 : -5; // 50% chance of starting from left or right
+    //this.xVelocity = Math.random() > 0.5 ? 5 : -5; // 50% chance of starting from left or right
+    this.xVelocity = Math.floor(Math.random() * (max - min + 1) + min);
+
   }
 
   update() {
     super.update();
     let game = this.game;
 
-    // setTimeout(() => {
-    //   this.yVelocity = 0;
-    //   this.xVelocity = 0;
-    // }, 3000)
-
-    //Entity.prototype.update.apply(this, arguments); // call parent update()
     // If the ball hits the top postion move it down and vice versa
     if (this.y > game.height - this.height || this.y < 0) {
       this.yVelocity *= -1; // switch the direction of the ball
     }
 
+    // If the bll thits the side wall
     if (this.x > game.width - this.width || this.x < 0) {
       this.xVelocity *= -1; // switch the direction of the ball
     }

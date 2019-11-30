@@ -27,7 +27,6 @@ function start() {
 }
 
 start();
-//game.start();
 
 window.game = game;
 window.startGame = start;
