@@ -43,8 +43,10 @@ export default class Ball extends Entity {
 
   draw() {
     var player = this.player;
-    player.style.left = this.x + 'px';
-    player.style.top = this.y + 'px';
+    
+    //player.style.left = this.x + 'px';
+    //player.style.top = this.y + 'px';
+    player.style.transform = `translate('${this.x}px','${this.y}px')`;
   }
 
   init() {
@@ -53,8 +55,8 @@ export default class Ball extends Entity {
     this.y = game.height / 2 - this.height; // center ball vertically
 
     // Set random values if ball goes offscreen
-    var min = -5,
-      max = 5;
+    var min = -7,
+      max = 7;
 
     this.yVelocity = Math.floor(Math.random() * (max - min + 1) + min);
     //this.xVelocity = Math.random() > 0.5 ? 5 : -5; // 50% chance of starting from left or right
