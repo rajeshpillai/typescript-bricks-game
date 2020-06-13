@@ -15,6 +15,8 @@ export default class Player extends Paddle {
     // Image
     var elem = document.createElement("img");
     elem.setAttribute("src", "dist/sprites/paddle.png");
+    elem.style.height = this.height + 'px';
+    elem.style.width = this.width +  'px';
 
     var player = document.createElement("div");
     player.style.position = "absolute";
