@@ -44,9 +44,9 @@ export default class Ball extends Entity {
   draw() {
     var player = this.player;
     
-    //player.style.left = this.x + 'px';
-    //player.style.top = this.y + 'px';
-    player.style.transform = `translate('${this.x}px','${this.y}px')`;
+    player.style.left = this.x + 'px';
+    player.style.top = this.y + 'px';
+    //player.style.transform = `translate('${this.x}px','${this.y}px')`;
   }
 
   init() {

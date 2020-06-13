@@ -1,4 +1,4 @@
-import { Paddle } from "../paddle";
+import { Paddle } from "./paddle";
 
 export default class Player extends Paddle {
   name: string;

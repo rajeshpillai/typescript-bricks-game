@@ -1,4 +1,4 @@
-import Entity from "./blocks/entity";
+import Entity from "./entity";
 
 export class Paddle extends Entity {
   width: number
