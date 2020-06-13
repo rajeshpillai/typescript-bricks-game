@@ -9,8 +9,12 @@ export default class Player extends Paddle {
     this.width = 100;
     this.height = 20;
     this.x = 20;
-    this.y = game.height - 20;
+    this.y = game.height - 50;
     this.name = "player";
+
+    // Image
+    var elem = document.createElement("img");
+    elem.setAttribute("src", "dist/sprites/paddle.png");
 
     var player = document.createElement("div");
     player.style.position = "absolute";
@@ -19,7 +23,10 @@ export default class Player extends Paddle {
     player.style.left = this.x + 'px';
     player.style.top = this.y + 'px';
     player.setAttribute("id", "player");
+    player.appendChild(elem);
     this.player = player;
+
+
 
     game.canvas.append(player);
   }

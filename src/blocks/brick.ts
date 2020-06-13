@@ -24,6 +24,10 @@ export default class Brick extends Entity {
     this.x = 0;
     this.show = true;
 
+    var elem = document.createElement("img");
+    elem.setAttribute("src", "dist/sprites/brick.png");
+    elem.style.width = this.width + "px";
+
     var player = document.createElement("div");
     player.style.position = "absolute";
     player.style.width = this.width + 'px';
@@ -31,6 +35,7 @@ export default class Brick extends Entity {
     player.style.left = this.x + 'px';
     player.style.top = this.y + 'px';
     player.className += " brick";
+    player.appendChild(elem);
     this.player = player;
 
     game.canvas.append(player);
