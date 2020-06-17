@@ -26,8 +26,8 @@ class Entity {
     this.px = this.x;  // prev values
     this.py = this.y;
 
-    this.x += this.xVelocity;
-    this.y += this.yVelocity;
+    // this.x += this.xVelocity;
+    // this.y += this.yVelocity;
   }
 
   draw() {

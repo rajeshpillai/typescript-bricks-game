@@ -17,7 +17,6 @@ export default class Ball extends Entity {
     super(game);
     this.width = 20;
     this.height = 20;
-    this.ax = 0;
     this.name = "ball";
 
     var player = document.createElement("div");
@@ -55,12 +54,12 @@ export default class Ball extends Entity {
     this.y = game.height / 2 - this.height; // center ball vertically
 
     // Set random values if ball goes offscreen
-    var min = -7,
-      max = 7;
+    var min = -6,
+      max = 6;
 
     this.yVelocity = Math.floor(Math.random() * (max - min + 1) + min);
-    //this.xVelocity = Math.random() > 0.5 ? 5 : -5; // 50% chance of starting from left or right
-    this.xVelocity = Math.floor(Math.random() * (max - min + 1) + min);
+    this.xVelocity = Math.random() > 0.5 ? 5 : -5; // 50% chance of starting from left or right
+    //this.xVelocity = Math.floor(Math.random() * (max - min + 1) + min);
 
   }
 
@@ -87,10 +86,13 @@ export default class Ball extends Entity {
 
     if (hitter) {
       //this.xVelocity *= -1.1; // switch the movement / rebound and also increase the speed.
-      this.yVelocity *= -1.1;
+      //this.yVelocity *= -1.1;
+      
       // make the game interesting by gaining velocity. 
       // If this is not done, the ball movement after hit will be predictable
-      //this.yVelocity += hitter.xVelocity / 2;
+      this.yVelocity *= -1; 
+      this.yVelocity += hitter.xVelocity / 2;
+      return;
     }
 
     // check if ball intersects with bricks
@@ -100,7 +102,6 @@ export default class Ball extends Entity {
       if (b.show == true && this.intersect(b)) {
         b.show = false;
         game.score1++;
-        console.log("::brick.intersect");
       }
     }
   }
